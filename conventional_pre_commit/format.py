@@ -54,4 +54,4 @@ def is_conventional(input, types=DEFAULT_TYPES):
     pattern = f"^({r_types(types)}){r_scope()}{r_delim()}{r_subject()}$"
     regex = re.compile(pattern, re.DOTALL)
 
-    return bool(regex.match(input))
+    return bool(regex.match(input)) or input.startswith("Merge branch")
